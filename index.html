@@ -1,153 +1,209 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Akhil Patel | Demo Website</title>
-  <meta name="description" content="Simple and beautiful personal landing page." />
-  <style>
-    :root {
-      --bg: #0d1321;
-      --card: #111a2b;
-      --text: #f3f6ff;
-      --muted: #b8c2de;
-      --accent: #7ea2ff;
-      --accent-soft: #9effd6;
-      --border: #22304d;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Akhil Patel — Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio website for Akhil Patel — product design work, writing, and contact."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
 
-    * { box-sizing: border-box; }
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="/">akhil—patel<span class="brand-dot">.</span></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/#work">Work</a>
+          <a href="/#writing">Writing</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+          <button class="theme-toggle" type="button" data-theme-toggle>
+            <span class="theme-toggle__label" data-theme-label>Dark</span>
+          </button>
+        </nav>
+      </div>
+    </header>
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(900px 420px at 12% -15%, #1b2b57 0%, transparent 60%),
-        radial-gradient(800px 360px at 88% 0%, #123f45 0%, transparent 58%),
-        var(--bg);
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
+    <main id="content">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Senior Product Designer • San Francisco</p>
+            <h1 class="h1">
+              Designing in pixels,<br />
+              thinking in systems.
+            </h1>
+            <p class="lede">
+              This is a clean rebuild of my portfolio. Next step: drop in case studies and
+              assets as we migrate.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn--primary" href="#work">View work</a>
+              <a class="btn btn--ghost" href="#contact">Get in touch</a>
+            </div>
+            <div class="chips" aria-label="Highlights">
+              <span class="chip">Product strategy</span>
+              <span class="chip">UX systems</span>
+              <span class="chip">Visual design</span>
+              <span class="chip">0→1</span>
+            </div>
+          </div>
 
-    .wrap {
-      width: min(840px, 100%);
-      background: linear-gradient(160deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: clamp(22px, 4vw, 40px);
-      box-shadow: 0 20px 60px rgba(3, 8, 20, 0.5);
-    }
+          <div class="hero-card" aria-label="Quick facts">
+            <div class="hero-card__top">
+              <div class="badge">Available for feedback chats</div>
+              <div class="stat">
+                <div class="stat__num">8+</div>
+                <div class="stat__label">years designing</div>
+              </div>
+            </div>
+            <div class="hero-card__body">
+              <p class="muted">
+                Replace this panel with a photo / cover image when ready.
+              </p>
+              <ul class="bullets">
+                <li>Case studies with crisp storytelling</li>
+                <li>Mobile + desktop systems thinking</li>
+                <li>Metrics-minded iteration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    .pill {
-      display: inline-block;
-      color: var(--accent-soft);
-      border: 1px solid #29405d;
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 0.85rem;
-      margin-bottom: 14px;
-    }
+      <section id="work" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="h2">Selected work</h2>
+            <p class="muted">Start from scratch — add projects as you go.</p>
+          </div>
 
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 6vw, 3.5rem);
-      line-height: 1.06;
-      letter-spacing: -0.02em;
-    }
+          <div class="cards">
+            <article class="card">
+              <div class="card__meta">
+                <span class="pill">Mobile • Voice</span>
+                <span class="pill">0→1</span>
+              </div>
+              <h3 class="h3">Daily super‑app</h3>
+              <p class="muted">
+                Placeholder. Replace with a real case study page + cover.
+              </p>
+              <a class="card__link" href="#" aria-disabled="true">Coming soon</a>
+            </article>
 
-    h1 span { color: var(--accent); }
+            <article class="card">
+              <div class="card__meta">
+                <span class="pill">SaaS</span>
+                <span class="pill">B2B</span>
+              </div>
+              <h3 class="h3">Advisor console</h3>
+              <p class="muted">
+                Placeholder. Replace with a real case study page + cover.
+              </p>
+              <a class="card__link" href="#" aria-disabled="true">Coming soon</a>
+            </article>
 
-    p {
-      margin: 14px 0 0;
-      max-width: 62ch;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 1.05rem;
-    }
+            <article class="card">
+              <div class="card__meta">
+                <span class="pill">Growth</span>
+                <span class="pill">Experiments</span>
+              </div>
+              <h3 class="h3">Designing for acquisition</h3>
+              <p class="muted">
+                Placeholder. Replace with a real case study page + cover.
+              </p>
+              <a class="card__link" href="#" aria-disabled="true">Coming soon</a>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
+      <section id="writing" class="section section--alt">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="h2">Writing</h2>
+            <p class="muted">Short notes, frameworks, and learnings.</p>
+          </div>
+          <div class="list">
+            <a class="row" href="#" aria-disabled="true">
+              <div>
+                <div class="row__title">On product narratives</div>
+                <div class="row__meta">Draft • 5 min</div>
+              </div>
+              <div class="row__arrow" aria-hidden="true">→</div>
+            </a>
+            <a class="row" href="#" aria-disabled="true">
+              <div>
+                <div class="row__title">Systems for speed</div>
+                <div class="row__meta">Draft • 7 min</div>
+              </div>
+              <div class="row__arrow" aria-hidden="true">→</div>
+            </a>
+          </div>
+        </div>
+      </section>
 
-    .btn {
-      display: inline-block;
-      padding: 11px 16px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid transparent;
-      transition: 0.15s ease;
-    }
+      <section id="about" class="section">
+        <div class="container about-grid">
+          <div>
+            <h2 class="h2">About</h2>
+            <p class="muted">
+              Add a longer bio here. Keep it skimmable: what you do, what you’re
+              optimizing for, and what you’re exploring.
+            </p>
+            <div class="facts">
+              <div class="fact">
+                <div class="fact__k">Focus</div>
+                <div class="fact__v">Product strategy + execution</div>
+              </div>
+              <div class="fact">
+                <div class="fact__k">Strength</div>
+                <div class="fact__v">Turning ambiguity into systems</div>
+              </div>
+              <div class="fact">
+                <div class="fact__k">Collaboration</div>
+                <div class="fact__v">Design, PM, Eng, Research</div>
+              </div>
+            </div>
+          </div>
 
-    .btn.primary {
-      background: var(--accent);
-      color: #0b1733;
-    }
+          <aside class="aside">
+            <div class="aside__title">Quick links</div>
+            <div class="aside__links">
+              <a href="#" aria-disabled="true">Résumé (add link)</a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </aside>
+        </div>
+      </section>
 
-    .btn.secondary {
-      color: var(--text);
-      border-color: #2b3a5d;
-      background: rgba(255, 255, 255, 0.02);
-    }
+      <section id="contact" class="section section--alt">
+        <div class="container contact">
+          <div>
+            <h2 class="h2">Contact</h2>
+            <p class="muted">Want feedback, a collab, or just to say hi?</p>
+          </div>
+          <div class="contact__cta">
+            <a class="btn btn--primary" href="mailto:hello@example.com">Email me</a>
+            <a class="btn btn--ghost" href="#work">Back to work</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(126, 162, 255, 0.3);
-    }
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <div class="muted">© <span data-year></span> Akhil Patel</div>
+        <div class="muted">Built as a fast static site</div>
+      </div>
+    </footer>
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      list-style: none;
-      margin: 24px 0 0;
-      padding: 0;
-    }
-
-    .tags li {
-      border: 1px solid #2b3a5d;
-      border-radius: 999px;
-      padding: 6px 11px;
-      color: #d9e3ff;
-      font-size: 0.9rem;
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    footer {
-      margin-top: 22px;
-      color: #8f9cc2;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
-  <main class="wrap">
-    <span class="pill">Demo Website</span>
-    <h1>Hi, I am <span>Akhil Patel</span>.</h1>
-    <p>
-      This is your new simple and beautiful landing page. It is lightweight, fast,
-      and ready to deploy on Vercel.
-    </p>
-
-    <div class="actions">
-      <a class="btn primary" href="#">View Projects</a>
-      <a class="btn secondary" href="#">Contact</a>
-    </div>
-
-    <ul class="tags" aria-label="Skills">
-      <li>Frontend</li>
-      <li>React</li>
-      <li>JavaScript</li>
-      <li>UI Design</li>
-    </ul>
-
-    <footer>Built with HTML and CSS. Ready to publish.</footer>
-  </main>
-</body>
+    <script src="/script.js"></script>
+  </body>
 </html>
