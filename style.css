@@ -1,0 +1,162 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #1a1a1a;
+  background: #fafafa;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+}
+
+nav {
+  margin-bottom: 48px;
+}
+
+nav a {
+  font-size: 13px;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #1a1a1a;
+}
+
+a {
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: #ccc;
+  transition: text-decoration-color 0.2s;
+}
+
+a:hover {
+  text-decoration-color: #1a1a1a;
+}
+
+.project-header {
+  margin-bottom: 48px;
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.project-subtitle {
+  color: #666;
+  margin-bottom: 0;
+}
+
+.project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 12px;
+  color: #666;
+  border: 1px solid #e0e0e0;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+p {
+  color: #444;
+  margin-bottom: 12px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 16px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+ul li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: #bbb;
+}
+
+strong {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+}
+
+.project-nav a {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.project-nav a:hover {
+  opacity: 0.6;
+}
+
+.footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+  font-size: 13px;
+}
+
+.footer a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer a:hover {
+  color: #1a1a1a;
+}
+
+.footer p {
+  color: #888;
+  font-size: 13px;
+}
+
+@media (max-width: 480px) {
+  .container { padding: 48px 20px 40px; }
+  .project-title { font-size: 20px; }
+}

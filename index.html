@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akhil Patel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fafafa;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 80px 24px 60px;
+    }
+
+    h1 {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 32px;
+    }
+
+    p {
+      color: #444;
+      margin-bottom: 16px;
+    }
+
+    a {
+      color: #1a1a1a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #ccc;
+      transition: text-decoration-color 0.2s;
+    }
+
+    a:hover {
+      text-decoration-color: #1a1a1a;
+    }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #888;
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+
+    .work-list {
+      list-style: none;
+      border-top: 1px solid #eee;
+    }
+
+    .work-list li {
+      border-bottom: 1px solid #eee;
+    }
+
+    .work-list a {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      text-decoration: none;
+      color: #1a1a1a;
+      transition: opacity 0.2s;
+    }
+
+    .work-list a:hover {
+      opacity: 0.6;
+    }
+
+    .work-title {
+      font-weight: 400;
+    }
+
+    .work-meta {
+      font-size: 13px;
+      color: #888;
+      white-space: nowrap;
+      margin-left: 16px;
+    }
+
+    .playground-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .playground-grid a {
+      display: block;
+      padding: 14px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 14px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .playground-grid a:hover {
+      border-color: #ccc;
+      background: #fff;
+    }
+
+    .playground-label {
+      font-size: 12px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    .values {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+
+    .values span {
+      font-size: 13px;
+      color: #666;
+      border: 1px solid #e0e0e0;
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+
+    .footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+      font-size: 13px;
+      color: #888;
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 48px 20px 40px; }
+      .playground-grid { grid-template-columns: 1fr; }
+      .work-list a { flex-direction: column; gap: 2px; }
+      .work-meta { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Akhil Patel</h1>
+    <div class="updated">Updated Mar 27, 2026</div>
+
+    <p>
+      I'm a Senior Product Designer based in San Francisco. My strength lies in storytelling, architecting systems, and crafting compelling visuals and interactions. I thrive in complexity, ambiguity, and ambitious teams.
+    </p>
+    <p>
+      I was the Founding Designer at <a href="hero.html">Hero</a>, where I designed the entire product and brand experience for a daily super-app featuring natural language voice interactions. Before that, I designed at <a href="https://ramp.com" target="_blank">Ramp</a> and <a href="https://www.microsoft.com/en-us/bing" target="_blank">Microsoft (Bing)</a>.
+    </p>
+    <p>
+      I hold a Master's degree and have created 0→1 experiences as well as owned design for products used by tens of millions. My goal is to positively touch a billion lives.
+    </p>
+    <p>
+      You can find me on <a href="https://www.linkedin.com/in/akhil-patel/" target="_blank">LinkedIn</a>, or reach me via <a href="mailto:hi.akhilpatel@gmail.com">email</a>.
+    </p>
+
+    <div class="section-label">Selected Work</div>
+    <ul class="work-list">
+      <li>
+        <a href="hero.html">
+          <span class="work-title">Building a daily super-app</span>
+          <span class="work-meta">Hero · Founding Designer</span>
+        </a>
+      </li>
+      <li>
+        <a href="console.html">
+          <span class="work-title">Building the Ramp Advisor Console</span>
+          <span class="work-meta">Ramp · SaaS</span>
+        </a>
+      </li>
+      <li>
+        <a href="growth.html">
+          <span class="work-title">Designing for Growth</span>
+          <span class="work-meta">Ramp · Experimentation</span>
+        </a>
+      </li>
+      <li>
+        <a href="feed.html">
+          <span class="work-title">Crafting the visual shopping feed</span>
+          <span class="work-meta">Microsoft · Bing & MSN</span>
+        </a>
+      </li>
+      <li>
+        <a href="offers.html">
+          <span class="work-title">Bing Offers optimization</span>
+          <span class="work-meta">Microsoft · Search</span>
+        </a>
+      </li>
+      <li>
+        <a href="decorators.html">
+          <span class="work-title">Decoding shopping decorators</span>
+          <span class="work-meta">Microsoft · Framework</span>
+        </a>
+      </li>
+      <li>
+        <a href="mobile-projects.html">
+          <span class="work-title">Mobile projects compilation</span>
+          <span class="work-meta">Various · Mobile</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="section-label">Playground</div>
+    <div class="playground-grid">
+      <a href="playground.html">
+        Interactions & Prototypes
+        <div class="playground-label">Animations, micro-interactions</div>
+      </a>
+      <a href="playground.html#speculative">
+        Speculative Design
+        <div class="playground-label">Asthma ecosystem, IoT</div>
+      </a>
+    </div>
+
+    <div class="section-label">About</div>
+    <p>
+      I'm a novice rapper, motorcycle enthusiast, and nature-lover. I'm also an ambivert and 🌚 is my favorite emoji.
+    </p>
+    <div class="values">
+      <span>Respect</span>
+      <span>Integrity</span>
+      <span>Accountability</span>
+      <span>Humility</span>
+      <span>Courage</span>
+    </div>
+
+    <div class="footer">
+      <p>© 2014–2026 Akhil Patel. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
