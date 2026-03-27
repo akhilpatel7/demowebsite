@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 640px;
   margin: 0 auto;
   padding: 80px 24px 60px;
 }
@@ -40,6 +40,13 @@ a {
 
 a:hover {
   text-decoration-color: #1a1a1a;
+}
+
+.project-cover {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  border: 1px solid #eee;
 }
 
 .project-header {
