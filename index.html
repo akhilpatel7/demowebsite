@@ -1,1 +1,153 @@
-<!DOCTYPE html><html><head><title>My Website</title></head><body><p>This is my one-line website.</p></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akhil Patel | Demo Website</title>
+  <meta name="description" content="Simple and beautiful personal landing page." />
+  <style>
+    :root {
+      --bg: #0d1321;
+      --card: #111a2b;
+      --text: #f3f6ff;
+      --muted: #b8c2de;
+      --accent: #7ea2ff;
+      --accent-soft: #9effd6;
+      --border: #22304d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 420px at 12% -15%, #1b2b57 0%, transparent 60%),
+        radial-gradient(800px 360px at 88% 0%, #123f45 0%, transparent 58%),
+        var(--bg);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .wrap {
+      width: min(840px, 100%);
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: clamp(22px, 4vw, 40px);
+      box-shadow: 0 20px 60px rgba(3, 8, 20, 0.5);
+    }
+
+    .pill {
+      display: inline-block;
+      color: var(--accent-soft);
+      border: 1px solid #29405d;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+    }
+
+    h1 span { color: var(--accent); }
+
+    p {
+      margin: 14px 0 0;
+      max-width: 62ch;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: 0.15s ease;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #0b1733;
+    }
+
+    .btn.secondary {
+      color: var(--text);
+      border-color: #2b3a5d;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(126, 162, 255, 0.3);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      margin: 24px 0 0;
+      padding: 0;
+    }
+
+    .tags li {
+      border: 1px solid #2b3a5d;
+      border-radius: 999px;
+      padding: 6px 11px;
+      color: #d9e3ff;
+      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    footer {
+      margin-top: 22px;
+      color: #8f9cc2;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <span class="pill">Demo Website</span>
+    <h1>Hi, I am <span>Akhil Patel</span>.</h1>
+    <p>
+      This is your new simple and beautiful landing page. It is lightweight, fast,
+      and ready to deploy on Vercel.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href="#">View Projects</a>
+      <a class="btn secondary" href="#">Contact</a>
+    </div>
+
+    <ul class="tags" aria-label="Skills">
+      <li>Frontend</li>
+      <li>React</li>
+      <li>JavaScript</li>
+      <li>UI Design</li>
+    </ul>
+
+    <footer>Built with HTML and CSS. Ready to publish.</footer>
+  </main>
+</body>
+</html>
