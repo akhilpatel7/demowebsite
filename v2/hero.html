@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="auth.js"></script>
+  <meta charset="utf-8" />
+  <title>Hero — Building a daily super-app</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="../assets/62858444bc671de5c9ab9b7a_favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container page">
+    <a href="home.html" class="back">&larr; Back to all work</a>
+
+    <div class="project-hero">
+      <h1 class="project-hero-title">Building a daily super-app (WIP)</h1>
+      <div class="project-hero-topics">Novel interactions &bull; Visual design &bull; Mobile</div>
+    </div>
+
+    <img class="cover-img" src="../assets/671e8aa80a4b295fd173d23d_Website_cover.jpg" alt="Hero app cover" />
+
+    <!-- Context -->
+    <div class="cs-section">
+      <div class="cs-label">Context</div>
+      <div class="cs-heading">Role</div>
+      <p class="cs-text"><strong>Founding Designer</strong> with 7 engineers over 18 months (and continuing). Designed the entire iOS product + brand experience, contributed to product strategy + hiring, and built a robust design culture in the team.</p>
+      <p class="cs-text">Every day, we juggle priorities across apps and people. Hero, the world's first Daily Assistant, makes life easier in 3 ways:</p>
+      <p class="cs-text"><strong>Unified Life View:</strong> combines calendars, reminders, notes, groceries, weather, news, search and GPT.<br />
+      <strong>Multi-player:</strong> sharing availability, reminders, and notes with partners, family, and friends.<br />
+      <strong>Voice-powered:</strong> voice UX updates the UI as you speak, completing tasks up to 10X faster.</p>
+      <p class="cs-text">Users use Hero as a 'superpower' for their busy lives.</p>
+      <p class="cs-text"><a href="https://tryhero.app" target="_blank">Visit Website</a> &nbsp;&middot;&nbsp; <a href="https://apps.apple.com/us/app/hero-daily-assistant/id6443412722" target="_blank">App Store</a></p>
+    </div>
+
+    <!-- Foundation and early insights -->
+    <div class="cs-section">
+      <div class="cs-label">Foundation</div>
+      <h2 class="cs-heading">Foundation and early insights</h2>
+      <p class="cs-text">When I joined the team in May '23 as employee #1 in the US, the founders had already tested a crude MVP. My task on day 1 was to help the team build upon this foundation, and design an all new app from scratch over the next year. We also decided on core design principles to guide decision-making.</p>
+      <div class="cs-two-col">
+        <img src="../assets/671d4cd6bfbaaef8f19fd28d_Slide_16_9_-_671.jpg" alt="Early insights" />
+        <img src="../assets/671d4cd6491a7072bc6bb6a6_Slide_16_9_-_666.jpg" alt="Early insights" />
+      </div>
+      <img class="cs-img" src="../assets/671d780531808340c6ab0f53_Principles.jpg" alt="Design principles" />
+    </div>
+
+    <!-- Core content interaction -->
+    <div class="cs-section">
+      <div class="cs-label">Interaction</div>
+      <h2 class="cs-heading">Deciding the core content interaction</h2>
+      <p class="cs-text">One of the core decisions we made early on was to get rid of any tabs/navigation and build a free-flowing feed of blocks. We did NOT want to introduce a new tab every time we introduced a new feature. Key considerations: Swipe threshold velocity, snapping vs stacking cards, scroll within scroll, and expansion/collapse logic.</p>
+      <video class="cs-video" src="../videos/Feed-animation.mp4" autoplay loop muted playsinline></video>
+    </div>
+
+    <!-- Color system -->
+    <div class="cs-section">
+      <div class="cs-label">System</div>
+      <h2 class="cs-heading">A color-system foresight that saved us time building dark-mode</h2>
+      <p class="cs-text">I created a color system with 2 key aspects: Fewer choices for easy decision making, and a robust auto-switch logic within each color to work on dark mode.</p>
+      <div class="cs-callout">This small time investment upfront helped us ship dark-mode within a day.</div>
+      <img class="cs-img" src="../assets/671d561ccd97dc1dfec14ac9_Colors.jpg" alt="Color system" />
+      <video class="cs-video" src="../videos/dark-mode2.mp4" autoplay loop muted playsinline></video>
+    </div>
+
+    <!-- Calendar -->
+    <div class="cs-section">
+      <div class="cs-label">Feature</div>
+      <h2 class="cs-heading">Calendar: The anchor element</h2>
+      <p class="cs-text">The app is meant to be a daily use-case and hence calendar is the anchor element. We look at calendar as a surface within which we can bring in seamless integrations. Along with scheduling events, users can see weather, others' availability &amp; reminders.</p>
+      <div class="cs-two-col">
+        <img src="../assets/671d5bd27dbddf2acd67a05f_Calendar.jpg" alt="Calendar" />
+        <img src="../assets/671d6cea64ca9fe798be98d8_Weather.jpg" alt="Weather integration" />
+      </div>
+    </div>
+
+    <!-- Reminders -->
+    <div class="cs-section">
+      <div class="cs-label">Feature</div>
+      <h2 class="cs-heading">Reminders: Going social</h2>
+      <p class="cs-text">What differentiates Hero Reminders is the power of integrations. We empower users to remind their family/friends while also providing features such as 'comments' and recurring reminders. Reminders is one of the most loved features.</p>
+      <img class="cs-img" src="../assets/671d6eae86a14f2696c3dc95_Reminders.jpg" alt="Reminders" />
+    </div>
+
+    <!-- Notes -->
+    <div class="cs-section">
+      <div class="cs-label">Feature</div>
+      <h2 class="cs-heading">Notes: Driven by AI &amp; optimized for use-cases</h2>
+      <p class="cs-text">The goal with Hero Notes is not to compete with conventional note-taking apps. The core idea is to enable users get things off their mind instantly and collaborate. We integrated Instacart API &amp; auto-categorization for grocery lists and Perplexity for saving answers as notes. Each note gets a genAI cover image.</p>
+      <img class="cs-img" src="../assets/671d951ec297db7c6ac3df79_Notes.jpg" alt="Notes" />
+    </div>
+
+    <!-- Voice interactions -->
+    <div class="cs-section">
+      <div class="cs-label">Core Experience</div>
+      <h2 class="cs-heading">Designing for voice interactions</h2>
+      <p class="cs-text">Voice is the most powerful aspect. Users finish actions up to 10x faster (e.g. event scheduling).</p>
+      <p class="cs-text"><strong>Initial approach:</strong> Interface for seamless switching between voice and manual editing. System acted as guided-language interface. Although functioning, the feature was limited.</p>
+      <div class="cs-callout">We pivoted to a completely LLM-driven voice system and made it exponentially sharper while maintaining great speed. The UI changes in real-time.</div>
+      <div class="cs-two-col" style="align-items: center;">
+        <div>
+          <img src="../assets/671d6b59870713a1c45a6790_OldVoice.jpg" alt="Initial voice approach" style="width:100%; border-radius: var(--radius);" />
+          <p class="cs-caption" style="margin-top: 8px;">Initial approach</p>
+        </div>
+        <div>
+          <img src="../assets/671d6b5a53de4694d54515cf_NewVoice.jpg" alt="LLM-driven voice approach" style="width:100%; border-radius: var(--radius);" />
+          <p class="cs-caption" style="margin-top: 8px;">LLM-driven approach</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin: -8px 0 24px;">
+        <img src="../assets/671d6ee4306f6c548032eafd_Major_pivot.svg" alt="Pivot" width="154" />
+      </div>
+    </div>
+
+    <!-- Daily briefing -->
+    <div class="cs-section">
+      <div class="cs-label">Feature</div>
+      <h2 class="cs-heading">Daily briefing: A delightful summary of your day</h2>
+      <p class="cs-text">Daily Briefing showcases the power of all integrations. Users listen to upcoming schedule, weather update, news interests, and daily motivation. The experience is audio based with soothing music &amp; smooth animations.</p>
+      <img class="cs-img" src="../assets/671d58767dbddf2acd65b150_DB.jpg" alt="Daily Briefing" />
+    </div>
+
+    <!-- Onboarding -->
+    <div class="cs-section">
+      <div class="cs-label">Growth</div>
+      <h2 class="cs-heading">Cracking the onboarding code</h2>
+      <p class="cs-text">Onboarding was a tough nut to crack because Hero is almost a new category. We did ruthless prioritization, took feedback, and focused on 2-3 key features. We made it visually exciting with animations.</p>
+      <div class="cs-callout">Hero onboarding completion rate is &gt;90%</div>
+      <img class="cs-img" src="../assets/671deb90194e2fbb7e726ac3_OnboardingPrinciples.jpg" alt="Onboarding principles" />
+      <video class="cs-video" src="../videos/Onboarding.mp4" autoplay loop muted playsinline></video>
+    </div>
+
+    <!-- Motion -->
+    <div class="cs-section">
+      <div class="cs-label">Craft</div>
+      <h2 class="cs-heading">Mindful use of motion</h2>
+      <p class="cs-text">We leveraged motion design to educate, guide, provide feedback, personalize, and speed up shipping. Rive published a case-study about how Hero utilizes animation.</p>
+      <video class="cs-video" src="../videos/animations.mp4" autoplay loop muted playsinline></video>
+    </div>
+
+    <!-- User feedback & impact -->
+    <div class="impact-section">
+      <div class="cs-label">Impact</div>
+      <h2 class="cs-heading">User feedback &amp; impact</h2>
+      <p class="cs-text">We prioritized user-feedback at every stage. ~150 users talked 1-on-1 during beta testing. We balanced strong product thinking with feedback.</p>
+      <div style="margin: 32px 0;">
+        <div class="impact-stat">~20%</div>
+        <div class="impact-stat-label">Industry leading retention — d-30 retention (top 10% of productivity apps)</div>
+        <div class="impact-stat">Strong PMF</div>
+        <div class="impact-stat-label">Approaching from behavior change and high delta experience</div>
+      </div>
+      <video class="cs-video" src="../videos/FeedbackVideo.mp4" autoplay loop muted playsinline></video>
+      <img src="../assets/671ecae1ae710052d54dcfd2_Feedback.jpg" alt="User feedback" style="width: 100%; border-radius: var(--radius); margin-top: 16px;" />
+    </div>
+
+    <!-- Challenges & Realizations -->
+    <div class="cs-section">
+      <div class="cs-label">Reflection</div>
+      <h2 class="cs-heading">Challenges &amp; Realizations</h2>
+      <div class="cs-grid">
+        <div class="cs-grid-item">
+          <h4>Messy process</h4>
+          <p>Disorganization comes with being lean. Helped create formal feedback and hand-off processes.</p>
+        </div>
+        <div class="cs-grid-item">
+          <h4>Jack v/s Master</h4>
+          <p>Had to build outside core-competencies, feeling of shipping imperfect things.</p>
+        </div>
+        <div class="cs-grid-item">
+          <h4>Constant change</h4>
+          <p>App-category is new, things change everyday. Context switching is hard.</p>
+        </div>
+        <div class="cs-grid-item">
+          <h4>Challenging norms</h4>
+          <p>Only designer, had to fight hard for subjective things. Developed thoroughness.</p>
+        </div>
+        <div class="cs-grid-item">
+          <h4>Messiness is a moat</h4>
+          <p>Makes team fast and efficient early, but not scalable.</p>
+        </div>
+        <div class="cs-grid-item">
+          <h4>Great ideas from non-designers</h4>
+          <p>Taking feedback from unconventional sources became a superpower.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="project-nav">
+      <div></div>
+      <a href="console.html" class="next">Next: Building the Ramp Advisor Console &rarr;</a>
+    </div>
+
+    <div class="footer">
+      <a href="home.html">&larr; Back to all work</a>
+      <span>&copy; 2014&ndash;2026 Akhil Patel</span>
+    </div>
+  </div>
+</body>
+</html>
