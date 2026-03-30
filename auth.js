@@ -1,5 +1,7 @@
 (function() {
-  if (sessionStorage.getItem("ap_auth") !== "1") {
+  var expiry = localStorage.getItem("ap_auth");
+  if (!expiry || Date.now() > Number(expiry)) {
+    localStorage.removeItem("ap_auth");
     window.location.replace("index.html");
   }
 })();

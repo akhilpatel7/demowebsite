@@ -37,6 +37,14 @@
   <script src="js/webflow.schunk.1cc9e8f15c6fc67c.js" type="text/javascript"></script>
   <script src="js/webflow.eb06bb11.ee40d908deed362e.js" type="text/javascript"></script>
   <script>
+    (function() {
+      var expiry = localStorage.getItem("ap_auth");
+      if (expiry && Date.now() < Number(expiry)) {
+        window.location.replace("home.html");
+        return;
+      }
+    })();
+
     var HASHED = "f4d8d581c6c8bd1188783decf76a6293c8f4430dc7268622b14ac7d51d0c6432";
 
     async function sha256(str) {
@@ -49,7 +57,7 @@
       var pw = document.getElementById("pass").value;
       sha256(pw).then(function(hash) {
         if (hash === HASHED) {
-          sessionStorage.setItem("ap_auth", "1");
+          localStorage.setItem("ap_auth", Date.now() + 86400000);
           window.location.href = "home.html";
         } else {
           document.getElementById("error-msg").style.display = "block";
