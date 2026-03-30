@@ -14,7 +14,7 @@
 <body>
   <div class="utility-page-wrap">
     <div class="utility-page-content w-form">
-      <form onsubmit="return checkPassword()" class="utility-page-form">
+      <form id="pw-form" class="utility-page-form">
         <div class="div-block-27">
           <div class="div-block-26 pwd">
             <img width="55" alt="" src="assets/62576bc845294d7a01fb717c_New_Moon_Face.png" loading="lazy" class="image-3" />
@@ -44,19 +44,20 @@
       return Array.from(new Uint8Array(buf)).map(function(b) { return b.toString(16).padStart(2, "0"); }).join("");
     }
 
-    async function checkPassword() {
+    document.getElementById("pw-form").addEventListener("submit", function(e) {
+      e.preventDefault();
       var pw = document.getElementById("pass").value;
-      var hash = await sha256(pw);
-      if (hash === HASHED) {
-        sessionStorage.setItem("ap_auth", "1");
-        window.location.href = "home.html";
-      } else {
-        document.getElementById("error-msg").style.display = "block";
-        document.getElementById("pass").value = "";
-        document.getElementById("pass").focus();
-      }
-      return false;
-    }
+      sha256(pw).then(function(hash) {
+        if (hash === HASHED) {
+          sessionStorage.setItem("ap_auth", "1");
+          window.location.href = "home.html";
+        } else {
+          document.getElementById("error-msg").style.display = "block";
+          document.getElementById("pass").value = "";
+          document.getElementById("pass").focus();
+        }
+      });
+    });
   </script>
 </body>
 </html>
