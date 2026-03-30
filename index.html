@@ -4,142 +4,176 @@
   <meta charset="utf-8" />
   <title>Akhil Patel Portfolio</title>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="assets/62858444bc671de5c9ab9b7a_favicon.png" rel="shortcut icon" type="image/x-icon" />
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
-  <link href="assets/62858444bc671de5c9ab9b7a_favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
-
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'IBM Plex Sans', -apple-system, sans-serif;
-      background: #0a0a0a;
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background-color: #111;
       color: #fff;
       min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       -webkit-font-smoothing: antialiased;
     }
 
-    .gate {
+    .utility-page-wrap {
       text-align: center;
-      max-width: 400px;
-      padding: 40px 24px;
+      width: 100vw;
+      max-width: 100%;
+      padding: 24px;
     }
 
-    .gate-emoji {
-      width: 64px;
-      margin-bottom: 24px;
+    .utility-page-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .gate-title {
-      font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 28px;
-      font-weight: 600;
-      background: linear-gradient(135deg, #ff6b6b, #ffa500, #ff6b6b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .spanicon {
+      font-size: 70px;
+      margin-bottom: 12px;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       margin-bottom: 8px;
     }
 
-    .gate-subtitle {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 13px;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 40px;
+    .brand-row img {
+      width: 36px;
+      height: 36px;
     }
 
-    .gate-form {
+    .brand-name {
+      color: rgba(238, 238, 238, 0.5);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .page-label {
+      color: #d15071;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .page-desc {
+      color: rgba(255, 255, 255, 0.5);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      max-width: 400px;
+      line-height: 1.5;
+      margin-bottom: 32px;
+    }
+
+    .utility-page-form {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      align-items: center;
+      max-width: 800px;
     }
 
-    .gate-input {
-      font-family: 'IBM Plex Mono', monospace;
+    .text-field {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 30px;
+      width: 350px;
+      height: 48px;
+      padding: 10px 24px;
+      font-family: 'DM Sans', sans-serif;
       font-size: 15px;
-      padding: 14px 18px;
-      background: #141414;
-      border: 1px solid #2a2a2a;
-      border-radius: 8px;
       color: #fff;
       outline: none;
       text-align: center;
-      letter-spacing: 0.15em;
-      transition: border-color 0.2s;
+      letter-spacing: 0.1em;
+      margin-bottom: 32px;
     }
 
-    .gate-input::placeholder {
-      color: #444;
-      letter-spacing: 0.05em;
+    .text-field::placeholder {
+      color: rgba(238, 238, 238, 0.5);
     }
 
-    .gate-input:focus {
-      border-color: #555;
+    .text-field:focus {
+      background-color: rgba(255, 255, 255, 0.15);
     }
 
-    .gate-btn {
-      font-family: 'IBM Plex Sans', sans-serif;
+    .submit-button {
+      background-color: #c83660;
+      border: none;
+      border-radius: 4px;
+      width: 350px;
+      padding: 15px;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
       font-size: 14px;
       font-weight: 500;
-      padding: 14px 18px;
-      background: #fff;
-      color: #0a0a0a;
-      border: none;
-      border-radius: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0;
       cursor: pointer;
+      margin-bottom: 20px;
       transition: opacity 0.2s;
     }
 
-    .gate-btn:hover {
+    .submit-button:hover {
       opacity: 0.85;
     }
 
-    .gate-error {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      color: #ff4444;
-      margin-top: 8px;
+    .error-msg {
+      color: #ff6b6b;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      margin-top: -8px;
+      margin-bottom: 16px;
       opacity: 0;
       transition: opacity 0.2s;
     }
 
-    .gate-error.visible {
+    .error-msg.visible {
       opacity: 1;
     }
 
-    .gate-hint {
-      font-size: 12px;
-      color: #333;
-      margin-top: 32px;
+    @media (max-width: 479px) {
+      .text-field, .submit-button { width: 271px; }
+      .page-desc { letter-spacing: -0.5px; line-height: 150%; }
     }
   </style>
 </head>
 <body>
-  <div class="gate">
-    <img src="assets/62576bc845294d7a01fb717c_New_Moon_Face.png" alt="" class="gate-emoji" />
-    <h1 class="gate-title">akhil—patel.</h1>
-    <p class="gate-subtitle">Portfolio</p>
+  <div class="utility-page-wrap">
+    <div class="utility-page-content">
+      <div class="spanicon">🌚</div>
+      <div class="brand-row">
+        <img src="assets/62576bc845294d7a01fb717c_New_Moon_Face.png" alt="" />
+        <span class="brand-name">akhil—patel.</span>
+      </div>
+      <p class="page-label">Password Protected</p>
+      <p class="page-desc">This portfolio is password protected. Please enter the password to view.</p>
 
-    <form class="gate-form" onsubmit="return checkPassword()">
-      <input
-        type="password"
-        id="gate-pw"
-        class="gate-input"
-        placeholder="Enter password"
-        autocomplete="off"
-        autofocus
-      />
-      <button type="submit" class="gate-btn">View Portfolio</button>
-      <p id="gate-error" class="gate-error">Incorrect password. Try again.</p>
-    </form>
-
-    <p class="gate-hint">Request access from Akhil</p>
+      <form class="utility-page-form" onsubmit="return checkPassword()">
+        <input
+          type="password"
+          id="gate-pw"
+          class="text-field"
+          placeholder="Enter password"
+          autocomplete="off"
+          autofocus
+        />
+        <p id="gate-error" class="error-msg">Incorrect password. Try again.</p>
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </div>
   </div>
 
   <script>
