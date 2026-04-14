@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="auth.js"></script>
   <meta charset="utf-8" />
   <title>Akhil Patel</title>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -9,64 +10,132 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body { background: #111; color: #fff; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-    .gate { text-align: center; max-width: 440px; padding: 40px 24px; }
-    .gate-emoji { font-size: 48px; margin-bottom: 24px; }
-    .gate h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.03em; color: #fff; margin-bottom: 8px; }
-    .gate .sub { font-size: 14px; color: #666; margin-bottom: 40px; line-height: 1.6; }
-    .gate .sub a { color: #888; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #444; }
-    .gate .sub a:hover { color: #fff; text-decoration-color: #fff; }
-    .gate input[type="password"] { width: 100%; max-width: 320px; padding: 14px 20px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-family: inherit; font-size: 14px; text-align: center; letter-spacing: 0.1em; outline: none; transition: border-color 0.2s; margin-bottom: 16px; display: block; margin-left: auto; margin-right: auto; }
-    .gate input[type="password"]::placeholder { color: #555; letter-spacing: 0.05em; }
-    .gate input[type="password"]:focus { border-color: rgba(255,255,255,0.25); }
-    .gate button { width: 100%; max-width: 320px; padding: 14px; background: #fff; color: #111; border: none; border-radius: 8px; font-family: inherit; font-size: 13px; font-weight: 500; letter-spacing: 0.02em; cursor: pointer; transition: opacity 0.2s; }
-    .gate button:hover { opacity: 0.85; }
-    .gate .error { font-size: 13px; color: #e05555; margin-top: 16px; display: none; }
-  </style>
 </head>
 <body>
-  <div class="gate">
-    <div class="gate-emoji">🔑</div>
+  <div class="container page">
+    <nav>
+      <a class="brand" href="index.html">Akhil Patel</a>
+      <div class="links">
+        <a href="index.html" class="active">Work</a>
+        <a href="playground.html">Playground</a>
+        <a href="about.html">About</a>
+        <a href="https://drive.google.com/drive/folders/1QB8-SEKUi40JJJcH9y1ZiIOO7bm79v7t?usp=sharing" target="_blank">Resume</a>
+      </div>
+    </nav>
+
     <h1>Akhil Patel</h1>
-    <p class="sub">This portfolio is password protected.<br />Feel free to guess or visit me on <a href="https://www.linkedin.com/in/akhil-patel/" target="_blank">LinkedIn</a>.</p>
-    <form id="pw-form">
-      <input type="password" id="pass" placeholder="Enter password" autocomplete="off" autofocus />
-      <button type="submit">View Portfolio</button>
-      <p id="error-msg" class="error">Incorrect password. Try again.</p>
-    </form>
+    <div class="updated">Updated Mar 2026</div>
+
+    <div class="intro">
+      <p>Senior Product Designer in San Francisco. I thrive in complexity, ambiguity, and ambitious teams. My strength lies in storytelling, architecting systems, and crafting compelling visuals and interactions.</p>
+      <p>Currently building at <a href="hero.html">Hero</a> as Founding Designer. Previously designed at <a href="https://ramp.com" target="_blank">Ramp</a> and <a href="https://www.microsoft.com/en-us/bing" target="_blank">Microsoft</a>.</p>
+      <p>You can find me on <a href="https://www.linkedin.com/in/akhil-patel/" target="_blank">LinkedIn</a> or reach me via <a href="mailto:hi.akhilpatel@gmail.com">email</a>.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 class="section-title">Selected Work</h2>
+
+    <a href="hero.html" class="featured">
+      <img src="../assets/671152b7cf3058b88635e850_Hero_cover.png" alt="Hero app" />
+      <div class="featured-body">
+        <div class="featured-title">Building a daily super-app</div>
+        <div class="featured-desc">Designed the entire product and brand experience. Natural language voice interactions bundling multiple apps into one seamless experience — a first in the industry.</div>
+        <div class="featured-meta">
+          <span class="tag">Hero</span>
+          <span class="tag">Founding Designer</span>
+          <span class="tag">Mobile</span>
+          <span class="tag">0→1</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="console.html" class="featured">
+      <img src="../assets/641bfd22ac9e36b74cc302be_Feed_cover.png" alt="Ramp Advisor Console" />
+      <div class="featured-body">
+        <div class="featured-title">Building the Ramp Advisor Console</div>
+        <div class="featured-desc">Took the Advisor Console from initial design stages to GA launch. 100+ companies onboarded within a month.</div>
+        <div class="featured-meta">
+          <span class="tag">Ramp</span>
+          <span class="tag">SaaS</span>
+          <span class="tag">Strategy</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="project-list">
+      <a href="mobile-projects.html" class="project-card">
+        <div class="project-card-top">
+          <span class="project-card-title">Mobile Projects Compilation</span>
+          <span class="project-card-company">Various</span>
+        </div>
+        <div class="project-card-desc">Previews of mobile projects across companies, startups, and speculative passion projects.</div>
+      </a>
+      <a href="growth.html" class="project-card">
+        <div class="project-card-top">
+          <span class="project-card-title">Designing for Growth</span>
+          <span class="project-card-company">Ramp</span>
+        </div>
+        <div class="project-card-desc">Experiments and touchpoints to boost user-acquisition across the funnel.</div>
+      </a>
+      <a href="feed.html" class="project-card">
+        <div class="project-card-top">
+          <span class="project-card-title">Crafting the visual shopping feed</span>
+          <span class="project-card-company">Microsoft</span>
+        </div>
+        <div class="project-card-desc">3M impressions and 30K engagements monthly on Bing and MSN.</div>
+      </a>
+      <a href="offers.html" class="project-card">
+        <div class="project-card-top">
+          <span class="project-card-title">Bing Offers optimization</span>
+          <span class="project-card-company">Microsoft</span>
+        </div>
+        <div class="project-card-desc">Redesigned through optimized information and layout design.</div>
+      </a>
+      <a href="decorators.html" class="project-card">
+        <div class="project-card-top">
+          <span class="project-card-title">Decoding shopping decorators</span>
+          <span class="project-card-company">Microsoft</span>
+        </div>
+        <div class="project-card-desc">Framework for creating and scaling decorators across shopping teams.</div>
+      </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 class="section-title">Playground</h2>
+    <div class="playground-grid">
+      <a href="playground.html" class="playground-item">
+        Interactions & Prototypes
+        <div class="playground-item-sub">Animations, micro-interactions</div>
+      </a>
+      <a href="playground.html#speculative" class="playground-item">
+        Speculative Design
+        <div class="playground-item-sub">Asthma ecosystem, IoT</div>
+      </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 class="section-title">About</h2>
+    <div class="about-row">
+      <img src="../assets/641ad487a68930672a78769f_PHOTO-2023-03-22-03-11-49.jpg" alt="Akhil Patel" />
+      <div>
+        <p class="cs-text">I'm a novice rapper, motorcycle enthusiast, and nature-lover. I hold a Master's degree and have created 0→1 experiences as well as owned design for products used by tens of millions.</p>
+        <div class="values">
+          <span>Respect</span>
+          <span>Integrity</span>
+          <span>Accountability</span>
+          <span>Humility</span>
+          <span>Courage</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>&copy; 2014&ndash;2026 Akhil Patel</span>
+      <a href="https://www.linkedin.com/in/akhil-patel/" target="_blank">LinkedIn</a>
+    </div>
   </div>
-
-  <script>
-    (function() {
-      var expiry = localStorage.getItem("ap_auth");
-      if (expiry && Date.now() < Number(expiry)) {
-        window.location.replace("home.html");
-        return;
-      }
-    })();
-
-    var HASHED = "f4d8d581c6c8bd1188783decf76a6293c8f4430dc7268622b14ac7d51d0c6432";
-
-    async function sha256(str) {
-      var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
-      return Array.from(new Uint8Array(buf)).map(function(b) { return b.toString(16).padStart(2, "0"); }).join("");
-    }
-
-    document.getElementById("pw-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      var pw = document.getElementById("pass").value;
-      sha256(pw).then(function(hash) {
-        if (hash === HASHED) {
-          localStorage.setItem("ap_auth", Date.now() + 86400000);
-          window.location.href = "home.html";
-        } else {
-          document.getElementById("error-msg").style.display = "block";
-          document.getElementById("pass").value = "";
-          document.getElementById("pass").focus();
-        }
-      });
-    });
-  </script>
 </body>
 </html>

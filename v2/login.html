@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Akhil Patel</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="../assets/62858444bc671de5c9ab9b7a_favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { background: #111; color: #fff; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+    .gate { text-align: center; max-width: 440px; padding: 40px 24px; }
+    .gate-emoji { font-size: 48px; margin-bottom: 24px; }
+    .gate h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.03em; color: #fff; margin-bottom: 8px; }
+    .gate .sub { font-size: 14px; color: #666; margin-bottom: 40px; line-height: 1.6; }
+    .gate .sub a { color: #888; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #444; }
+    .gate .sub a:hover { color: #fff; text-decoration-color: #fff; }
+    .gate input[type="password"] { width: 100%; max-width: 320px; padding: 14px 20px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-family: inherit; font-size: 14px; text-align: center; letter-spacing: 0.1em; outline: none; transition: border-color 0.2s; margin-bottom: 16px; display: block; margin-left: auto; margin-right: auto; }
+    .gate input[type="password"]::placeholder { color: #555; letter-spacing: 0.05em; }
+    .gate input[type="password"]:focus { border-color: rgba(255,255,255,0.25); }
+    .gate button { width: 100%; max-width: 320px; padding: 14px; background: #fff; color: #111; border: none; border-radius: 8px; font-family: inherit; font-size: 13px; font-weight: 500; letter-spacing: 0.02em; cursor: pointer; transition: opacity 0.2s; }
+    .gate button:hover { opacity: 0.85; }
+    .gate .error { font-size: 13px; color: #e05555; margin-top: 16px; display: none; }
+  </style>
+</head>
+<body>
+  <div class="gate">
+    <div class="gate-emoji">🔑</div>
+    <h1>Akhil Patel</h1>
+    <p class="sub">This portfolio is password protected.<br />Feel free to guess or visit me on <a href="https://www.linkedin.com/in/akhil-patel/" target="_blank">LinkedIn</a>.</p>
+    <form id="pw-form">
+      <input type="password" id="pass" placeholder="Enter password" autocomplete="off" autofocus />
+      <button type="submit">View Portfolio</button>
+      <p id="error-msg" class="error">Incorrect password. Try again.</p>
+    </form>
+  </div>
+
+  <script>
+    (function() {
+      var expiry = localStorage.getItem("ap_auth");
+      if (expiry && Date.now() < Number(expiry)) {
+        window.location.replace("/v2");
+        return;
+      }
+    })();
+
+    var HASHED = "f4d8d581c6c8bd1188783decf76a6293c8f4430dc7268622b14ac7d51d0c6432";
+
+    async function sha256(str) {
+      var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+      return Array.from(new Uint8Array(buf)).map(function(b) { return b.toString(16).padStart(2, "0"); }).join("");
+    }
+
+    document.getElementById("pw-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      var pw = document.getElementById("pass").value;
+      sha256(pw).then(function(hash) {
+        if (hash === HASHED) {
+          localStorage.setItem("ap_auth", Date.now() + 86400000);
+          window.location.href = "/v2";
+        } else {
+          document.getElementById("error-msg").style.display = "block";
+          document.getElementById("pass").value = "";
+          document.getElementById("pass").focus();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
