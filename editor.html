@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Site Editor — Akhil Patel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/editor.css" />
+</head>
+<body>
+
+  <!-- ── Auth gate ───────────────────────────────────────────────────── -->
+  <div id="auth-gate">
+    <div class="gate-box">
+      <div class="gate-emoji">🛠️</div>
+      <h1>Site Editor</h1>
+      <p>Enter your portfolio password to access the editor.</p>
+      <input type="password" id="gate-pass" placeholder="Password" autocomplete="off" autofocus />
+      <button id="gate-btn">Unlock Editor</button>
+      <p id="gate-err" class="gate-err">Incorrect password.</p>
+    </div>
+  </div>
+
+  <!-- ── Editor shell (hidden until auth) ────────────────────────────── -->
+  <div id="editor-shell" style="display:none">
+
+    <!-- Top bar -->
+    <div id="topbar">
+      <div id="topbar-left">
+        <span id="site-logo">✦ editor</span>
+        <div id="page-tabs"></div>
+      </div>
+      <div id="topbar-right">
+        <span id="device-btns">
+          <button class="dev-btn active" data-w="100%"  title="Desktop">⬛</button>
+          <button class="dev-btn"        data-w="768px"  title="Tablet">▬</button>
+          <button class="dev-btn"        data-w="375px"  title="Mobile">▪</button>
+        </span>
+        <button id="btn-export">Export HTML</button>
+        <button id="btn-reset">Reset</button>
+      </div>
+    </div>
+
+    <!-- Main area -->
+    <div id="editor-main">
+
+      <!-- Preview iframe -->
+      <div id="preview-wrap">
+        <iframe id="preview" src="index.html" sandbox="allow-scripts allow-same-origin"></iframe>
+      </div>
+
+      <!-- Right sidebar -->
+      <div id="sidebar">
+        <div id="sidebar-placeholder">
+          <span>👆</span>
+          <p>Click any element on the page to edit it</p>
+        </div>
+
+        <div id="sidebar-panel" style="display:none">
+
+          <div class="panel-header">
+            <span id="panel-tag"></span>
+            <button id="panel-close">✕</button>
+          </div>
+
+          <!-- Text content -->
+          <div class="section" id="sec-text">
+            <div class="section-title">Content</div>
+            <textarea id="ctrl-text" rows="4" placeholder="Element text…"></textarea>
+          </div>
+
+          <!-- Typography -->
+          <div class="section">
+            <div class="section-title">Typography</div>
+            <div class="row">
+              <label>Size</label>
+              <div class="input-unit">
+                <input type="number" id="ctrl-fontsize" min="8" max="200" step="1" />
+                <span>px</span>
+              </div>
+            </div>
+            <div class="row">
+              <label>Weight</label>
+              <select id="ctrl-fontweight">
+                <option value="">—</option>
+                <option value="100">Thin 100</option>
+                <option value="200">Extralight 200</option>
+                <option value="300">Light 300</option>
+                <option value="400">Regular 400</option>
+                <option value="500">Medium 500</option>
+                <option value="600">Semibold 600</option>
+                <option value="700">Bold 700</option>
+                <option value="800">Extrabold 800</option>
+                <option value="900">Black 900</option>
+              </select>
+            </div>
+            <div class="row">
+              <label>Line height</label>
+              <div class="input-unit">
+                <input type="number" id="ctrl-lineheight" min="0.5" max="4" step="0.05" />
+                <span>×</span>
+              </div>
+            </div>
+            <div class="row">
+              <label>Letter spacing</label>
+              <div class="input-unit">
+                <input type="number" id="ctrl-letterspacing" min="-10" max="20" step="0.5" />
+                <span>px</span>
+              </div>
+            </div>
+            <div class="row">
+              <label>Align</label>
+              <div class="btn-group">
+                <button class="align-btn" data-val="left">⬛</button>
+                <button class="align-btn" data-val="center">▬</button>
+                <button class="align-btn" data-val="right">▪</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color -->
+          <div class="section">
+            <div class="section-title">Color</div>
+            <div class="row">
+              <label>Text</label>
+              <input type="color" id="ctrl-color" />
+            </div>
+            <div class="row">
+              <label>Background</label>
+              <input type="color" id="ctrl-bgcolor" />
+            </div>
+            <div class="row">
+              <label>Bg opacity</label>
+              <input type="range" id="ctrl-bgopacity" min="0" max="1" step="0.01" />
+            </div>
+          </div>
+
+          <!-- Spacing -->
+          <div class="section">
+            <div class="section-title">Spacing</div>
+            <div class="row">
+              <label>Padding</label>
+              <div class="four-inputs">
+                <input type="number" id="ctrl-pt" placeholder="T" title="Top" />
+                <input type="number" id="ctrl-pr" placeholder="R" title="Right" />
+                <input type="number" id="ctrl-pb" placeholder="B" title="Bottom" />
+                <input type="number" id="ctrl-pl" placeholder="L" title="Left" />
+              </div>
+            </div>
+            <div class="row">
+              <label>Margin</label>
+              <div class="four-inputs">
+                <input type="number" id="ctrl-mt" placeholder="T" title="Top" />
+                <input type="number" id="ctrl-mr" placeholder="R" title="Right" />
+                <input type="number" id="ctrl-mb" placeholder="B" title="Bottom" />
+                <input type="number" id="ctrl-ml" placeholder="L" title="Left" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Size -->
+          <div class="section">
+            <div class="section-title">Size</div>
+            <div class="row">
+              <label>Width</label>
+              <input type="text" id="ctrl-width" placeholder="auto / 100% / 320px" />
+            </div>
+            <div class="row">
+              <label>Height</label>
+              <input type="text" id="ctrl-height" placeholder="auto / 100% / 320px" />
+            </div>
+          </div>
+
+          <!-- Border -->
+          <div class="section">
+            <div class="section-title">Border</div>
+            <div class="row">
+              <label>Radius</label>
+              <div class="input-unit">
+                <input type="number" id="ctrl-radius" min="0" max="999" step="1" />
+                <span>px</span>
+              </div>
+            </div>
+            <div class="row">
+              <label>Color</label>
+              <input type="color" id="ctrl-bordercolor" />
+            </div>
+            <div class="row">
+              <label>Width</label>
+              <div class="input-unit">
+                <input type="number" id="ctrl-borderwidth" min="0" max="20" step="1" />
+                <span>px</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Computed CSS -->
+          <div class="section">
+            <div class="section-title">Computed styles <span style="font-weight:400;opacity:.5">(read-only)</span></div>
+            <pre id="computed-styles"></pre>
+          </div>
+
+        </div><!-- /sidebar-panel -->
+      </div><!-- /sidebar -->
+
+    </div><!-- /editor-main -->
+  </div><!-- /editor-shell -->
+
+  <script src="js/editor.js"></script>
+</body>
+</html>
