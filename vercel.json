@@ -3,7 +3,6 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "redirects": [
-    { "source": "/home", "destination": "/", "permanent": true },
-    { "source": "/v2/home", "destination": "/v2", "permanent": true }
+    { "source": "/home", "destination": "/", "permanent": true }
   ]
 }
