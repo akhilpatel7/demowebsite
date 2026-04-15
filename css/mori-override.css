@@ -1,0 +1,20 @@
+.w-webflow-badge { display: none !important; }
+
+@font-face {
+  font-family: "PPMori";
+  src: url("../Mori/web/PPMori-Regular.woff2") format("woff2"),
+       url("../Mori/web/PPMori-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+p,
+.paragraph,
+.paragraph.footer,
+label,
+blockquote,
+.text-block-4,
+.text-block-5 {
+  font-family: "PPMori", sans-serif !important;
+}
